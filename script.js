@@ -5,12 +5,12 @@ var O = 'o';
 var Default = "none";
 var UserOne = "userone";
 var UserTwo = "usertwo";
-var AI = 2;
+var AI = 'ai';
 
 var WhoTurn = UserOne;
 var UserOneSymbol = X;
 var UserTwoSymbol = O;
-var AiSymbol = 'o';
+var AiSymbol = O;
 
 var Neumorphism = '#dde1e7';
 var White = "white";
@@ -174,213 +174,215 @@ indexNine.style.display = "flex";
 indexNine.style.justifyContent = "center";
 indexNine.style.alignItems = "center";
 
-var boardArray;
-
-function init(){
-    for (var i = 0; i < 9; i++){
-        boardArray[i] = Default;
-    }
-}
+var boardArray = [
+    Default, Default, Default,
+    Default, Default, Default,
+    Default, Default, Default
+];
 
 function UserClick(index){
-    /*if (boardArray[index - 1] != UserOne && boardArray[index - 1] != UserTwo){
-        if (UserTurn == 1){
-            boardArray[index - 1] = UserOne;
-            UserTurn *= -1;
-        }
-        else if (UserTurn == -1){
-            boardArray[index - 1] = UserTwo;
-            UserTurn *= -1;
+    if (boardArray[index] != UserOne && boardArray[index] != UserTwo){
+        switch (index) {
+            case 0:
+                if (WhoTurn == UserOne){
+                    if (UserOneSymbol == X){
+                        xOne.style.display = Block;
+                    }
+                    else if (UserOneSymbol == O){
+                        oOne.style.display = Block;
+                    }
+                    boardArray[index] = UserOne;
+                    WhoTurn = UserTwo;
+                }
+                else if (WhoTurn == UserTwo){
+                    if (UserTwoSymbol == X){
+                        xOne.style.display = Block;
+                    }
+                    else if (UserTwoSymbol == O){
+                        oOne.style.display = Block;
+                    }
+                    boardArray[index] = UserTwo;
+                    WhoTurn = UserOne;
+                }
+                break;
+            case 1:
+                if (WhoTurn == UserOne){
+                    if (UserOneSymbol == X){
+                        xTwo.style.display = Block;
+                    }
+                    else if (UserOneSymbol == O){
+                        oTwo.style.display = Block;
+                    }
+                    boardArray[index] = UserOne;
+                    WhoTurn = UserTwo;
+                }
+                else if (WhoTurn == UserTwo){
+                    if (UserTwoSymbol == X){
+                        xTwo.style.display = Block;
+                    }
+                    else if (UserTwoSymbol == O){
+                        oTwo.style.display = Block;
+                    }
+                    boardArray[index] = UserTwo;
+                    WhoTurn = UserOne;
+                }
+                break;
+            case 2:
+                if (WhoTurn == UserOne){
+                    if (UserOneSymbol == X){
+                        xThree.style.display = Block;
+                    }
+                    else if (UserOneSymbol == O){
+                        oThree.style.display = Block;
+                    }
+                    boardArray[index] = UserOne;
+                    WhoTurn = UserTwo;
+                }
+                else if (WhoTurn == UserTwo){
+                    if (UserTwoSymbol == X){
+                        xThree.style.display = Block;
+                    }
+                    else if (UserTwoSymbol == O){
+                        oThree.style.display = Block;
+                    }
+                    boardArray[index] = UserTwo;
+                    WhoTurn = UserOne;
+                }
+                break;
+            case 3:
+                if (WhoTurn == UserOne){
+                    if (UserOneSymbol == X){
+                        xFour.style.display = Block;
+                    }
+                    else if (UserOneSymbol == O){
+                        oFour.style.display = Block;
+                    }
+                    boardArray[index] = UserOne;
+                    WhoTurn = UserTwo;
+                }
+                else if (WhoTurn == UserTwo){
+                    if (UserTwoSymbol == X){
+                        xFour.style.display = Block;
+                    }
+                    else if (UserTwoSymbol == O){
+                        oFour.style.display = Block;
+                    }
+                    boardArray[index] = UserTwo;
+                    WhoTurn = UserOne;
+                }
+                break;
+            case 4:
+                if (WhoTurn == UserOne){
+                    if (UserOneSymbol == X){
+                        xFive.style.display = Block;
+                    }
+                    else if (UserOneSymbol == O){
+                        oFive.style.display = Block;
+                    }
+                    boardArray[index] = UserOne;
+                    WhoTurn = UserTwo;
+                }
+                else if (WhoTurn == UserTwo){
+                    if (UserTwoSymbol == X){
+                        xFive.style.display = Block;
+                    }
+                    else if (UserTwoSymbol == O){
+                        oFive.style.display = Block;
+                    }
+                    boardArray[index] = UserTwo;
+                    WhoTurn = UserOne;
+                }
+                break;
+            case 5:
+                if (WhoTurn == UserOne){
+                    if (UserOneSymbol == X){
+                        xSix.style.display = Block;
+                    }
+                    else if (UserOneSymbol == O){
+                        oSix.style.display = Block;
+                    }
+                    boardArray[index] = UserOne;
+                    WhoTurn = UserTwo;
+                }
+                else if (WhoTurn == UserTwo){
+                    if (UserTwoSymbol == X){
+                        xSix.style.display = Block;
+                    }
+                    else if (UserTwoSymbol == O){
+                        oSix.style.display = Block;
+                    }
+                    boardArray[index] = UserTwo;
+                    WhoTurn = UserOne;
+                }
+                break;
+            case 6:
+                if (WhoTurn == UserOne){
+                    if (UserOneSymbol == X){
+                        xSelven.style.display = Block;
+                    }
+                    else if (UserOneSymbol == O){
+                        oSelven.style.display = Block;
+                    }
+                    boardArray[index] = UserOne;
+                    WhoTurn = UserTwo;
+                }
+                else if (WhoTurn == UserTwo){
+                    if (UserTwoSymbol == X){
+                        xSelven.style.display = Block;
+                    }
+                    else if (UserTwoSymbol == O){
+                        oSelven.style.display = Block;
+                    }
+                    boardArray[index] = UserTwo;
+                    WhoTurn = UserOne;
+                }
+                break;
+            case 7:
+                if (WhoTurn == UserOne){
+                    if (UserOneSymbol == X){
+                        xEight.style.display = Block;
+                    }
+                    else if (UserOneSymbol == O){
+                        oEight.style.display = Block;
+                    }
+                    boardArray[index] = UserOne;
+                    WhoTurn = UserTwo;
+                }
+                else if (WhoTurn == UserTwo){
+                    if (UserTwoSymbol == X){
+                        xEight.style.display = Block;
+                    }
+                    else if (UserTwoSymbol == O){
+                        oEight.style.display = Block;
+                    }
+                    boardArray[index] = UserTwo;
+                    WhoTurn = UserOne;
+                }
+                break;
+            case 8:
+                if (WhoTurn == UserOne){
+                    if (UserOneSymbol == X){
+                        xNine.style.display = Block;
+                    }
+                    else if (UserOneSymbol == O){
+                        oNine.style.display = Block;
+                    }
+                    boardArray[index] = UserOne;
+                    WhoTurn = UserTwo;
+                }
+                else if (WhoTurn == UserTwo){
+                    if (UserTwoSymbol == X){
+                        xNine.style.display = Block;
+                    }
+                    else if (UserTwoSymbol == O){
+                        oNine.style.display = Block;
+                    }
+                    boardArray[index] = UserTwo;
+                    WhoTurn = UserOne;
+                }
+                break;
         }
     }
-    DisplaySymbol();*/
-
-    switch (index) {
-        case 1:
-            if (WhoTurn == UserOne){
-                if (UserOneSymbol == X){
-                    xOne.style.display = Block;
-                }
-                else if (UserOneSymbol == O){
-                    oOne.style.display = Block;
-                }
-                WhoTurn = UserTwo;
-            }
-            else if (WhoTurn == UserTwo){
-                if (UserTwoSymbol == X){
-                    xOne.style.display = Block;
-                }
-                else if (UserTwoSymbol == O){
-                    oOne.style.display = Block;
-                }
-                WhoTurn = UserOne;
-            }
-            break;
-        case 2:
-            if (WhoTurn == UserOne){
-                if (UserOneSymbol == X){
-                    xTwo.style.display = Block;
-                }
-                else if (UserOneSymbol == O){
-                    oTwo.style.display = Block;
-                }
-                WhoTurn = UserTwo;
-            }
-            else if (WhoTurn == UserTwo){
-                if (UserTwoSymbol == X){
-                    xTwo.style.display = Block;
-                }
-                else if (UserTwoSymbol == O){
-                    oTwo.style.display = Block;
-                }
-                WhoTurn = UserOne;
-            }
-            break;
-        case 3:
-            if (WhoTurn == UserOne){
-                if (UserOneSymbol == X){
-                    xThree.style.display = Block;
-                }
-                else if (UserOneSymbol == O){
-                    oThree.style.display = Block;
-                }
-                WhoTurn = UserTwo;
-            }
-            else if (WhoTurn == UserTwo){
-                if (UserTwoSymbol == X){
-                    xThree.style.display = Block;
-                }
-                else if (UserTwoSymbol == O){
-                    oThree.style.display = Block;
-                }
-                WhoTurn = UserOne;
-            }
-            break;
-        case 4:
-            if (WhoTurn == UserOne){
-                if (UserOneSymbol == X){
-                    xFour.style.display = Block;
-                }
-                else if (UserOneSymbol == O){
-                    oFour.style.display = Block;
-                }
-                WhoTurn = UserTwo;
-            }
-            else if (WhoTurn == UserTwo){
-                if (UserTwoSymbol == X){
-                    xFour.style.display = Block;
-                }
-                else if (UserTwoSymbol == O){
-                    oFour.style.display = Block;
-                }
-                WhoTurn = UserOne;
-            }
-            break;
-        case 5:
-            if (WhoTurn == UserOne){
-                if (UserOneSymbol == X){
-                    xFive.style.display = Block;
-                }
-                else if (UserOneSymbol == O){
-                    oFive.style.display = Block;
-                }
-                WhoTurn = UserTwo;
-            }
-            else if (WhoTurn == UserTwo){
-                if (UserTwoSymbol == X){
-                    xFive.style.display = Block;
-                }
-                else if (UserTwoSymbol == O){
-                    oFive.style.display = Block;
-                }
-                WhoTurn = UserOne;
-            }
-            break;
-        case 6:
-            if (WhoTurn == UserOne){
-                if (UserOneSymbol == X){
-                    xSix.style.display = Block;
-                }
-                else if (UserOneSymbol == O){
-                    oSix.style.display = Block;
-                }
-                WhoTurn = UserTwo;
-            }
-            else if (WhoTurn == UserTwo){
-                if (UserTwoSymbol == X){
-                    xSix.style.display = Block;
-                }
-                else if (UserTwoSymbol == O){
-                    oSix.style.display = Block;
-                }
-                WhoTurn = UserOne;
-            }
-            break;
-        case 7:
-            if (WhoTurn == UserOne){
-                if (UserOneSymbol == X){
-                    xSelven.style.display = Block;
-                }
-                else if (UserOneSymbol == O){
-                    oSelven.style.display = Block;
-                }
-                WhoTurn = UserTwo;
-            }
-            else if (WhoTurn == UserTwo){
-                if (UserTwoSymbol == X){
-                    xSelven.style.display = Block;
-                }
-                else if (UserTwoSymbol == O){
-                    oSelven.style.display = Block;
-                }
-                WhoTurn = UserOne;
-            }
-            break;
-        case 8:
-            if (WhoTurn == UserOne){
-                if (UserOneSymbol == X){
-                    xEight.style.display = Block;
-                }
-                else if (UserOneSymbol == O){
-                    oEight.style.display = Block;
-                }
-                WhoTurn = UserTwo;
-            }
-            else if (WhoTurn == UserTwo){
-                if (UserTwoSymbol == X){
-                    xEight.style.display = Block;
-                }
-                else if (UserTwoSymbol == O){
-                    oEight.style.display = Block;
-                }
-                WhoTurn = UserOne;
-            }
-            break;
-        case 9:
-            if (WhoTurn == UserOne){
-                if (UserOneSymbol == X){
-                    xNine.style.display = Block;
-                }
-                else if (UserOneSymbol == O){
-                    oNine.style.display = Block;
-                }
-                WhoTurn = UserTwo;
-            }
-            else if (WhoTurn == UserTwo){
-                if (UserTwoSymbol == X){
-                    xNine.style.display = Block;
-                }
-                else if (UserTwoSymbol == O){
-                    oNine.style.display = Block;
-                }
-                WhoTurn = UserOne;
-            }
-            break;
-    }
-}
-
-function GetRandom(){
-    return Math.floor(Math.random() * 10);
 }
 
 function DisplaySymbol(){
@@ -439,6 +441,3 @@ function DisplaySymbol(){
         }
     }
 }
-DisplaySymbol();
-setInterval(()=>{
-});
