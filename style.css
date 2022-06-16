@@ -9,8 +9,198 @@ html, body{
     background-color: black;
 }
 
-p{
+#chooseMode{
+    height: 100vh;
+    min-height: 500px;
+}
+#chooseModeContainer{
+    width: 100%;
+    height: 100%;
+    
+}
+#chooseSymbolContainer{
+    width: 100%;
+    height: 100%;display: none;
+}
+#chooseSYmbolConatiner{
+    top: 50px;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#chooseSYmbolConatiner p{
+    font-size: 3em;
+    color: white;
+}
+#xSymbolContainer{
+    top: 300px;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#xSymbolContainer p{
+    font-size: 8em;
+    color: white;
+}
+
+#oSymbolContainer{
+    top: 450px;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#oSymbolContainer p{
+    font-size: 8em;
+    color: white;
+}
+
+
+#titleContainer{
+    top: 50px;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#titleContainer p{
+    font-size: 3em;
+    color: white;
+}
+#aiButtonConatiner{
+    top: 300px;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#aiButtonConatiner p{
+    font-size: 68px;
+    font-weight: 900;
+    color: white;
+}
+#mutiButtonConatiner{
+    top: 450px;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mutiButtonConatiner p{
+    font-size: 58px;
+    font-weight: 900;
+    color: white;
+}
+
+#gameMode #board p{
     font-size: 8em;
     color: white;
     display: none;
+}
+
+#matchInfoConatiner{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 175px;
+}
+#scoreConatiner{
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#scoreConatiner #score{
+    font-size: 2em;
+    color: white;
+}
+#symbolContainer{
+    width: 100%;
+    height: 75px;
+}
+#playerSymbolContainer{
+    float: left;
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#otherSymbolContainer{
+    float: right;
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#symbolContainer p{
+    font-size: 6em;
+    color: aliceblue;
+}
+#namesContainer{
+    width: 100%;
+    height: 50px;
+}
+#playerNameContainer{
+    float: left;
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#otherNameContainer{
+    float: right;
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#namesContainer p{
+    font-size: 2em;
+    color: white;
+}
+
+#resultInfoContainer{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 175px;
+    background-color: aquamarine;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#resultInfoContainer p{
+    color: white;
+    font-size: 5em;
 }
