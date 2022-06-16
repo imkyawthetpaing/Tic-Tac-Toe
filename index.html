@@ -8,7 +8,53 @@
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
+    <section id="chooseMode">
+        <div id="chooseModeContainer">
+            <div id="titleContainer">
+                <p>CHOOSE MODE</p>
+            </div>
+            <div id="aiButtonConatiner" onclick="ComputerClick()">
+                <p>COMPUTER</p>
+            </div>
+            <div id="mutiButtonConatiner" onclick="MutiplayerClick()">
+                <p>MUTIPLAYER</p>
+            </div>
+        </div>
+        <div id="chooseSymbolContainer">
+            <div id="chooseSYmbolConatiner">
+                <p id="symbolTitle">CHOOSE SYMBOL</p>
+            </div>
+
+            <div id="xSymbolContainer" onclick="XSymbolClick()">
+                <p id="symbolX">X</p>
+            </div>
+            <div id="oSymbolContainer" onclick="OSymbolClick()">
+                <p id="symbolO">O</p>
+            </div>
+        </div>
+    </section>
     <section id="gameMode" class="gameMode">
+        <div id="matchInfoConatiner">
+            <div id="scoreConatiner">
+                <p id="score">3:1</p>
+            </div>
+            <div id="symbolContainer">
+                <div id="playerSymbolContainer">
+                    <p id="playerSymbol">X</p>
+                </div>
+                <div id="otherSymbolContainer">
+                    <p id="otherSymbol">O</p>
+                </div>
+            </div>
+            <div id="namesContainer">
+                <div id="playerNameContainer">
+                    <p id="playerName">PLAYER</p>
+                </div>
+                <div id="otherNameContainer">
+                    <p id="otherName"></p>
+                </div>
+            </div>
+        </div>
         <div id="board">
             <div id="row1">
                 <div id="index1" onclick="UserClick(0)">
