@@ -5,166 +5,106 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+:root{
+    --BoardLenght: 360px;
+    --RowLenght: 120px; /*360 / 3*/
+    --IndexLenght: 113.3333333333333px; /*(360 - 20) / 3*/
+    --IndexMarginLeft: 5px; /* 20 / 4*/
+    --IndexMarginTop: 3.333333333333333px; /* 5 / 2*/
+    --IndexMarginTopBase: 2.5px;
+    --IndexColor: black;
+}
+
 html, body{
     background-color: black;
 }
 
-#chooseMode{
+#main{
     height: 100vh;
     min-height: 500px;
 }
-#chooseModeContainer{
+
+#playMode{
     width: 100%;
     height: 100%;
-    
-}
-#chooseSymbolContainer{
-    width: 100%;
-    height: 100%;display: none;
-}
-#chooseSYmbolConatiner{
-    top: 50px;
-    position: fixed;
-    width: 100%;
-    height: 100px;
+
+    background-color: black;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#chooseSYmbolConatiner p{
-    font-size: 3em;
-    color: white;
-}
-#xSymbolContainer{
-    top: 300px;
-    position: fixed;
-    width: 100%;
-    height: 100px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#xSymbolContainer p{
-    font-size: 8em;
-    color: white;
-}
-
-#oSymbolContainer{
-    top: 450px;
-    position: fixed;
-    width: 100%;
-    height: 100px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#oSymbolContainer p{
-    font-size: 8em;
-    color: white;
-}
-
-
-#titleContainer{
-    top: 50px;
-    position: fixed;
-    width: 100%;
-    height: 100px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#titleContainer p{
-    font-size: 3em;
-    color: white;
-}
-#aiButtonConatiner{
-    top: 300px;
-    position: fixed;
-    width: 100%;
-    height: 100px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#aiButtonConatiner p{
-    font-size: 68px;
-    font-weight: 900;
-    color: white;
-}
-#mutiButtonConatiner{
-    top: 450px;
-    position: fixed;
-    width: 100%;
-    height: 100px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#mutiButtonConatiner p{
-    font-size: 58px;
-    font-weight: 900;
-    color: white;
-}
-
-#gameMode #board p{
-    font-size: 8em;
-    color: white;
-    display: none;
-}
-
-#matchInfoConatiner{
+#info{
     position: fixed;
     top: 0px;
     width: 100%;
     height: 175px;
 }
-#scoreConatiner{
+
+#winInfoContainer{
+    position: fixed;
+    top: 0px;
     width: 100%;
-    height: 50px;
+    height: 175px;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#nextButtonContainer{
+    position: fixed;
+    top: 675px;
+    width: 100%;
+    height: 175px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#scoreConatiner #score{
-    font-size: 2em;
+#nextButton{
+    width: 250px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#nextButton p{
+    font-size: 5em;
     color: white;
 }
-#symbolContainer{
-    width: 100%;
-    height: 75px;
+#winInfo{
+    font-size: 5em;
+    color: white;
 }
-#playerSymbolContainer{
-    float: left;
-    width: 50%;
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#otherSymbolContainer{
-    float: right;
-    width: 50%;
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#symbolContainer p{
-    font-size: 6em;
-    color: aliceblue;
-}
-#namesContainer{
+#scoreContainer{
     width: 100%;
     height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#score{
+    font-size: 3em;
+    color: white;
+}
+
+#symbolContainer{
+    width: 100%;
+    height: 100px;
+}
+
+#nameContainer {
+    width: 100%;
+    height: 25px;
+}
+#nameContainer p{
+    font-size: 2em;
+    color: white;
 }
 #playerNameContainer{
     float: left;
@@ -184,23 +124,169 @@ html, body{
     justify-content: center;
     align-items: center;
 }
-#namesContainer p{
-    font-size: 2em;
+#symbolContainer p{
+    font-size: 7em;
     color: white;
 }
-
-#resultInfoContainer{
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    height: 175px;
-    background-color: aquamarine;
+#playerSymbolContainer{
+    float: left;
+    width: 50%;
+    height: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#resultInfoContainer p{
+#otherSymbolContainer{
+    float: right;
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board{
+    width: var(--BoardLenght);
+    height: var(--BoardLenght);
+    background-color: black;
+}
+
+#board p{
     color: white;
-    font-size: 5em;
+    font-size: 8em;
+    display: none;
+}
+
+/*-----------*/
+#board #row0{
+    width: 100%;
+    height: var(--RowLenght);
+    background-color: white;
+}
+
+#board #row1{
+    width: 100%;
+    height: var(--RowLenght);
+    background-color: white;
+}
+#board #row2{
+    width: 100%;
+    height: var(--RowLenght);
+    background-color: white;
+}
+
+/*-----------*/
+#row0 #index0{
+    float: left;
+    margin-top: var(--IndexMarginLeft);
+    margin-left: var(--IndexMarginLeft);
+    width: var(--IndexLenght);
+    height: var(--IndexLenght);
+    background-color: var(--IndexColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#row0 #index1{
+    float: left;
+    margin-top: var(--IndexMarginLeft);
+    margin-left: var(--IndexMarginLeft);
+    width: var(--IndexLenght);
+    height: var(--IndexLenght);
+    background-color: var(--IndexColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#row0 #index2{
+    float: right;
+    margin-top: var(--IndexMarginLeft);
+    margin-right: var(--IndexMarginLeft);
+    width: var(--IndexLenght);
+    height: var(--IndexLenght);
+    background-color: var(--IndexColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------*/
+#row1 #index3{
+    float: left;
+    margin-top: var(--IndexMarginTop);
+    margin-left: var(--IndexMarginLeft);
+    width: var(--IndexLenght);
+    height: var(--IndexLenght);
+    background-color: var(--IndexColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#row1 #index4{
+    float: left;
+    margin-top: var(--IndexMarginTop);
+    margin-left: var(--IndexMarginLeft);
+    width: var(--IndexLenght);
+    height: var(--IndexLenght);
+    background-color: var(--IndexColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#row1 #index5{
+    float: right;
+    margin-top: var(--IndexMarginTop);
+    margin-right: var(--IndexMarginLeft);
+    width: var(--IndexLenght);
+    height: var(--IndexLenght);
+    background-color: var(--IndexColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------*/
+#row2 #index6{
+    float: left;
+    margin-top: var(--IndexMarginTopBase);
+    margin-left: var(--IndexMarginLeft);
+    width: var(--IndexLenght);
+    height: var(--IndexLenght);
+    background-color: var(--IndexColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#row2 #index7{
+    float: left;
+    margin-top: var(--IndexMarginTopBase);
+    margin-left: var(--IndexMarginLeft);
+    width: var(--IndexLenght);
+    height: var(--IndexLenght);
+    background-color: var(--IndexColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#row2 #index8{
+    float: right;
+    margin-top: var(--IndexMarginTopBase);
+    margin-right: var(--IndexMarginLeft);
+    width: var(--IndexLenght);
+    height: var(--IndexLenght);
+    background-color: var(--IndexColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
