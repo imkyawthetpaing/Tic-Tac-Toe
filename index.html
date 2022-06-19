@@ -4,102 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-    <section id="chooseMode">
-        <div id="chooseModeContainer">
-            <div id="titleContainer">
-                <p>CHOOSE MODE</p>
-            </div>
-            <div id="aiButtonConatiner" onclick="ComputerClick()">
-                <p>COMPUTER</p>
-            </div>
-            <div id="mutiButtonConatiner" onclick="MutiplayerClick()">
-                <p>MUTIPLAYER</p>
-            </div>
-        </div>
-        <div id="chooseSymbolContainer">
-            <div id="chooseSYmbolConatiner">
-                <p id="symbolTitle">CHOOSE SYMBOL</p>
+    <section id="main">
+
+        <div id="playMode">
+
+            <div id="info">
+                <div id="scoreContainer">
+                    <p id="score"></p>
+                </div>
+
+                <div id="symbolContainer">
+                    <div id="playerSymbolContainer">
+                        <p id="player_symbol">X</p>
+                    </div>
+                    <div id="otherSymbolContainer">
+                        <p id="other_symbol">O</p>
+                    </div>
+                </div>
+
+                <div id="nameContainer">
+                    <div id="playerNameContainer">
+                        <p id="player_name">PLAYER</p>
+                    </div>
+                    <div id="otherNameContainer">
+                        <p id="other_name">COMPUTER</p>
+                    </div>
+                </div>
             </div>
 
-            <div id="xSymbolContainer" onclick="XSymbolClick()">
-                <p id="symbolX">X</p>
+            <div id="winInfoContainer">
+                <p id="winInfo"></p>
+                <div id="nextButtonContainer">
+                    <div id="nextButton" onclick="NextButtonClick()">
+                        <p>NEXT</p>
+                    </div>
+                </div>
             </div>
-            <div id="oSymbolContainer" onclick="OSymbolClick()">
-                <p id="symbolO">O</p>
+            
+            <div id="board">
+                <div id="row0">
+                    <div id="index0" onclick="UserClick(0)">
+                        <p id="icon0"></p>
+                    </div>
+                    <div id="index1" onclick="UserClick(1)">
+                        <p id="icon1"></p>
+                    </div>
+                    <div id="index2" onclick="UserClick(2)">
+                        <p id="icon2"></p>
+                    </div>
+                </div>
+                <div id="row1">
+                    <div id="index3" onclick="UserClick(3)">
+                        <p id="icon3"></p>
+                    </div>
+                    <div id="index4" onclick="UserClick(4)">
+                        <p id="icon4"></p>
+                    </div>
+                    <div id="index5" onclick="UserClick(5)">
+                        <p id="icon5"></p>
+                    </div>
+                </div>
+                <div id="row2">
+                    <div id="index6" onclick="UserClick(6)">
+                        <p id="icon6"></p>
+                    </div>
+                    <div id="index7" onclick="UserClick(7)">
+                        <p id="icon7"></p>
+                    </div>
+                    <div id="index8" onclick="UserClick(8)">
+                        <p id="icon8"></p>
+                    </div>
+                </div>
             </div>
+
         </div>
+
     </section>
-    <section id="gameMode" class="gameMode">
-        <div id="matchInfoConatiner">
-            <div id="scoreConatiner">
-                <p id="score">3:1</p>
-            </div>
-            <div id="symbolContainer">
-                <div id="playerSymbolContainer">
-                    <p id="playerSymbol">X</p>
-                </div>
-                <div id="otherSymbolContainer">
-                    <p id="otherSymbol">O</p>
-                </div>
-            </div>
-            <div id="namesContainer">
-                <div id="playerNameContainer">
-                    <p id="playerName">PLAYER</p>
-                </div>
-                <div id="otherNameContainer">
-                    <p id="otherName"></p>
-                </div>
-            </div>
-        </div>
-        <div id="board">
-            <div id="row1">
-                <div id="index1" onclick="UserClick(0)">
-                    <p id="o1">O</p>
-                    <p id="x1">X</p>
-                </div>
-                <div id="index2" onclick="UserClick(1)">
-                    <p id="o2">O</p>
-                    <p id="x2">X</p>
-                </div>
-                <div id="index3" onclick="UserClick(2)">
-                    <p id="o3">O</p>
-                    <p id="x3">X</p>
-                </div>
-            </div>
-            <div id="row2">
-                <div id="index4" onclick="UserClick(3)">
-                    <p id="o4">O</p>
-                    <p id="x4">X</p>
-                </div>
-                <div id="index5" onclick="UserClick(4)">
-                    <p id="o5">O</p>
-                    <p id="x5">X</p>
-                </div>
-                <div id="index6" onclick="UserClick(5)">
-                    <p id="o6">O</p>
-                    <p id="x6">X</p>
-                </div>
-            </div>
-            <div id="row3">
-                <div id="index7" onclick="UserClick(6)">
-                    <p id="o7">O</p>
-                    <p id="x7">X</p>
-                </div>
-                <div id="index8" onclick="UserClick(7)">
-                    <p id="o8">O</p>
-                    <p id="x8">X</p>
-                </div>
-                <div id="index9" onclick="UserClick(8)">
-                    <p id="o9">O</p>
-                    <p id="x9">X</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
